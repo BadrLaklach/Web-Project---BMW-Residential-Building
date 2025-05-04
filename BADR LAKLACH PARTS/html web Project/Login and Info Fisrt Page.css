@@ -1,0 +1,449 @@
+/* Global Setup */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  background-color: #F1EFEC;
+  color: #030303;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* === HEADER === */
+
+.headerdiv {
+  position: relative;
+  background-image: url("Images/rubicon-alison-brooks-architects_4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Dark overlay for readability */
+.headerdiv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #F1EFEC;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #D4C9BE;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.header nav {
+  margin-top: 0;
+}
+
+.header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header nav li {
+  margin: 0 10px;
+}
+
+.header nav a {
+  text-decoration: none;
+  color: #123458;
+  font-weight: bold;
+  background-color: #D4C9BE;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.header nav a:hover {
+  background-color: #c7bbaa;
+  transform: translateY(-2px);
+}
+
+/* === MAIN CONTENT === */
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+
+
+.content img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.content img:hover {
+  transform: scale(1.02);
+}
+
+.p1 {
+  grid-column: span 3;
+  background-color: #D4C9BE;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.p1 h1 {
+  color: #123458;
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.p1 p {
+  color: #030303;
+  font-style: italic;
+  text-align: center;
+  font-size: 18px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.paragraph {
+  background-color: #123458;
+  padding: 30px;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  grid-column: span 2;
+}
+
+.paragraph p {
+  margin: 0;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.img,
+.image2,
+.image3 {
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Special handling for the last row with two images */
+.image4 {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.image4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageside {
+
+  grid-column: 2 / 4;
+  grid-row: 4/4;
+
+
+}
+
+.building-info {
+  grid-column: span 3;
+  background-color: #D4C9BE;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  /* Ensures vertical stacking */
+}
+
+.building-info h2 {
+  color: #123458;
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  /* Ensures the heading takes full width */
+}
+
+.building-info ul {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 5px;
+  width: 100%;
+  /* Ensures the list takes full width */
+  padding-left: 20px;
+}
+
+.building-info li {
+  margin-bottom: 10px;
+  color: #030303;
+  line-height: 1.6;
+}
+
+.building-info strong {
+  color: #123458;
+  font-weight: 600;
+}
+
+.footer {
+  background-color: #123458;
+  color: #F1EFEC;
+  padding: 30px 0;
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  margin-top: 10px;
+  grid-column: span 3;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.footer-section h3 {
+  color: #D4C9BE;
+  font-family: 'Playfair Display', serif;
+  border-bottom: 1px solid rgba(212, 201, 190, 0.3);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-list li:hover {
+  color: #D4C9BE;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Icons */
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon.email:before {
+  content: "✉";
+}
+
+.icon.phone:before {
+  content: "☎";
+}
+
+.icon.emergency:before {
+  content: "⚠";
+}
+
+.icon.legal:before {
+  content: "📄";
+}
+
+.icon.regulations:before {
+  content: "📋";
+}
+
+.icon.faq:before {
+  content: "❓";
+}
+
+.icon.building:before {
+  content: "🏢";
+}
+
+.icon.location:before {
+  content: "📍";
+}
+
+.icon.city:before {
+  content: "🏙";
+}
+
+/* Match the box-shadow style from your content sections */
+.footer {
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px 10px 0 0;
+}
+
+
+
+
+/* Make the text divs align properly */
+.content>div:not(.p1):not(.img):not(.paragraph):not(.image2):not(.image3):not(.image4) {
+  background-color: #D4C9BE;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+}
+
+.content>div:not(.p1):not(.img):not(.paragraph):not(.image2):not(.image3):not(.image4) p {
+  padding: 30px;
+  margin: 0;
+  text-align: justify;
+  line-height: 1.5;
+  width: 100%;
+  
+}
+
+.image4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* two equal columns */
+  gap: 20px;
+  /* optional spacing between images */
+  padding: 20px;
+  /* optional padding */
+  justify-items: center;
+  /* center images inside their grid cells */
+}
+
+
+
+audio {
+  display: none;
+}
+
+
+/* Add font imports at the top */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .image4 {
+    grid-template-columns: 1fr;
+  }
+
+  .content>div {
+    min-height: 250px;
+  }
+
+  .p1,
+  .paragraph,
+  .content>div:not(.p1):not(.img):not(.paragraph) {
+    grid-column: 1;
+  }
+
+  .header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .header nav {
+    margin-top: 20px;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .p1 h1 {
+    font-size: 24px;
+  }
+
+  .building-info ul {
+    columns: 1;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
